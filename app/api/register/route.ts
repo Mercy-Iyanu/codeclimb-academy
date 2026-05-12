@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.office365.com',
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: Number(process.env.SMTP_PORT || 587),
       secure: false,
       auth: {
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"CodeClimb Academy" <${process.env.SMTP_USER}>`,
-      to: 'hicodeclimb@outlook.com',
+      to: 'this_is_mercy.io@outlook.com',
       cc: 'mmofoluwawo@gmail.com',
       replyTo: email,
       subject: `🚀 New Registration: ${childName} (${childAge} yrs) — ${courseLabels[course] || course}`,

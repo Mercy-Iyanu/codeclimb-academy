@@ -43,7 +43,7 @@ export default function Founder() {
                     className="object-cover"
                   />
                   <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-3 py-1 rounded-full text-xs font-semibold">
-                    Mercy, Founder & Head of Curriculum
+                    Mercy, Founder & Lead Instructor
                   </div>
                 </div>
               </div>
@@ -94,8 +94,7 @@ export default function Founder() {
             >
               <p>
                 My name is <strong style={{ color: "#7C3AED" }}>Mercy</strong>,
-                and I am the founder and head of curriculum at CodeClimb
-                Academy.
+                and I am the founder and lead instructor at CodeClimb Academy.
               </p>
 
               <p>
@@ -127,7 +126,7 @@ export default function Founder() {
                   className="mt-3 font-bold text-sm"
                   style={{ color: "#7C3AED" }}
                 >
-                  — Mercy, Founder & Head of Curriculum
+                  — Mercy, Founder & Lead Instructor
                 </p>
               </div>
 
