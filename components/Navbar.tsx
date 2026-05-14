@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import BrochureModal from './BrochureModal'
 
 const navLinks = [
   { href: '#courses', label: 'Courses' },
@@ -13,6 +14,7 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [brochureOpen, setBrochureOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -21,6 +23,7 @@ export default function Navbar() {
   }, [])
 
   return (
+    <>
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
@@ -71,6 +74,17 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => setBrochureOpen(true)}
+              className="flex items-center gap-1.5 text-sm font-semibold px-4 py-2 rounded-full border-2 transition-all hover:scale-105"
+              style={{
+                borderColor: '#7C3AED',
+                color: '#7C3AED',
+                background: 'transparent',
+              }}
+            >
+              📄 View Brochure
+            </button>
             <a
               href="https://wa.me/2347063197619"
               target="_blank"
@@ -131,6 +145,13 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="mt-2 pt-2 border-t flex flex-col gap-2" style={{ borderColor: '#F3F4F6' }}>
+                <button
+                  onClick={() => { setMenuOpen(false); setBrochureOpen(true) }}
+                  className="flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm border-2"
+                  style={{ borderColor: '#7C3AED', color: '#7C3AED', background: 'transparent' }}
+                >
+                  📄 View Brochure
+                </button>
                 <a
                   href="https://wa.me/2347063197619"
                   target="_blank"
@@ -155,5 +176,8 @@ export default function Navbar() {
         )}
       </div>
     </nav>
+
+    <BrochureModal isOpen={brochureOpen} onClose={() => setBrochureOpen(false)} />
+  </>
   )
 }
